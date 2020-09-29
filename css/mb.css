@@ -1,0 +1,287 @@
+@font-face {
+font-family: PressStart; /* Гарнитура шрифта */
+src: url(../ttf/PressStart.ttf); /* Путь к файлу со шрифтом */
+}
+
+body{
+marign:0;
+}
+
+html {
+	font-family: PressStart, 'Comic Sans MS', cursive;
+background-color: #221d47;
+cursor: default;
+/*width:920px;
+height:1100px;*/
+}
+
+#controls{
+margin:auto;
+}
+
+#playArea{
+width:		340px;
+height:		420px;
+background-image:url(../pics/mob/background920x12801.jpg);
+margin:		auto auto 0 auto;
+position:	relative;
+}
+
+.meowBar{
+	width: 40px;
+	height:730px;
+	background:red;
+	display:none;
+	position:	absolute;
+}
+
+.flo{
+width:		20px;
+height:		40px;
+background-image: url(../pics/mob/sit.png);
+/* background:black; */
+position:	absolute;
+margin-top:	380px;
+right:;
+}
+
+.floleft{
+margin-top:	400px;
+position:	absolute;
+width:		40px;
+height:		20px;
+background-image: url(../pics/mob/left.png); 
+animation-name: colorchange;   
+animation-duration: 500ms; 
+animation-delay: ;  
+animation-iteration-count: infinite;
+-webkit-animation-name: colorchange;   
+-webkit-animation-duration: 500ms; 
+-webkit-animation-delay: ;  
+-webkit-animation-iteration-count: infinite;
+}
+@keyframes colorchange {
+from {        background-image: url(../pics/mob/left.png);  }
+to {        background-image: url(../pics/mob/left2.png);   }
+}
+@-webkit-keyframes colorchange {
+from {        background-image: url(../pics/mob/left.png);  }
+to {        background-image: url(../pics/mob/left2.png);  }
+}
+
+
+.floright{
+margin-top:	400px;
+position:	absolute;
+width:		40px;
+height:		20px;
+background-image: url(../pics/mob/right.png); 
+animation-name: colorchangee;   
+animation-duration: 500ms; 
+animation-delay: ;  
+animation-iteration-count: infinite;
+-webkit-animation-name: colorchangee;   
+-webkit-animation-duration: 500ms; 
+-webkit-animation-delay: ;  
+-webkit-animation-iteration-count: infinite;
+}
+@keyframes colorchangee {
+from {        background-image: url(../pics/mob/right.png);  }
+to {        background-image: url(../pics/mob/right2.png);   }
+}
+@-webkit-keyframes colorchangee {
+from {        background-image: url(../pics/mob/right.png);  }
+to {        background-image: url(../pics/mob/right2.png);  }
+}
+
+
+.flocatch{
+position:	absolute;
+width:		40px;
+height:		80px;
+background-image: url(../pics/mob/catched.png);
+margin-top:	380px;
+margin-left:;
+}
+
+#panel{
+margin-left:50px;
+margin-top: 150px;
+	float:		left;
+	display:none;
+}
+
+.step{
+	/* background:black; */
+	background-image: url(../pics/canaryflight01.png.png); 
+	animation-name: colorchangeee;   
+	animation-duration: 500ms; 
+	animation-delay: ;  
+	animation-iteration-count: infinite;
+	-webkit-animation-name: colorchangeee;   
+	-webkit-animation-duration: 500ms; 
+	-webkit-animation-delay: ;  
+	-webkit-animation-iteration-count: infinite;
+}
+	@keyframes colorchangeee {
+	from {        background-image: url(../pics/canaryflight01.png);  }
+	to {        background-image: url(../pics/canaryflight02.png);   }
+	}
+@-webkit-keyframes colorchangeee {
+from {        background-image: url(../pics/canaryflight01.png);  }
+to {        background-image: url(../pics/canaryflight02.png);   }
+}
+
+.list {
+	width:900px;
+	height:65px;
+}
+.button{
+	
+
+	/*background-color: #155667; */
+	margin:	auto;
+	width:	180px;
+	height:	35px;
+	border: 4px solid #155667;
+	border-radius: 50px 50px 50px 50px;
+	padding:10px;
+	text-align: center;
+	line-height:35px;
+	color:#2d99b6;
+	line-height: 1.1em;
+}
+
+#game {
+	float:;
+}
+.main-menu{
+	margin:	100px auto auto auto;
+	width:	900px;
+	height:	1200px;
+}
+
+.banner{
+	width: 	890px;
+	height:	350px;
+/* 	border: 2px solid black; */
+	border-radius: 50px 50px 50px 50px; 
+	background-image: url(../pics/890_350.jpg);
+}
+
+
+a{
+	text-decoration: none;
+	color:			 black;
+}
+a:visited {
+	color:			 black;
+}
+
+
+.chooselanguage{
+	width: 		600px;
+	height: 	300px;
+	position: 	absolute;
+	left: 		50%;
+	top: 	    50%;
+	margin: 	-200px 0 0 -350px;
+	border: 	2px dotted white;
+}
+
+.eng{
+	width: 	128px;
+	height:	128px;	
+	float:  left;
+/*	border: 2px solid black;*/
+	margin-left: 15px;
+	margin-top: 70px;
+	background-image: url(../pics/eng.png);
+	
+}
+
+.rus{
+	width: 	128px;
+	height:	128px;
+	float:  left;
+/*	border: 2px solid black;*/
+	margin-left: 15px;
+	margin-top: 70px;
+	background-image: url(../pics/rus.png);
+
+}
+
+.fra{
+	width: 	128px;
+	height:	128px;	
+	float:  left;
+	/*border: 2px solid black;*/
+	margin-left: 80px;
+	margin-top: 70px;
+	background-image: url(../pics/fra.png);
+
+}
+
+.saveres{
+	float:left;
+}
+
+table {
+margin:	100px auto auto auto;
+/* font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif; */
+font-size: 14px;
+border-collapse: collapse;
+text-align: center;
+}
+th, td:first-child {
+background: #AFCDE7;
+color: white;
+padding: 10px 20px;
+}
+th, td {
+border-style: solid;
+border-width: 0 1px 1px 0;
+border-color: white;
+}
+td {
+background: #D8E6F3;
+}
+th:first-child, td:first-child {
+text-align: left;
+}
+
+canvas {
+	float:		left;
+	position:	relative;
+	background: url(../../pics/playarea.jpg); 
+	display: block; 
+	margin:	70px 0 0 0; 
+	
+}
+
+    textarea {
+    resize: none;
+  
+    }
+.left{
+	height:50px;
+	width:50px;
+	background: url(../pics/mob/arrowleft.png); 	
+	float:left;
+	margin-left:80px;
+	margin-right:20px;
+
+}
+
+.right{
+		height:50px;
+	width:50px;
+		background: url(../pics/mob/arrowright.png); 
+			float:left;
+				margin-right:;
+				margin-left:60px;
+}
+
+.mobcontrols{
+
+}

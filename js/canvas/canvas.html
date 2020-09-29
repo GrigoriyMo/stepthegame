@@ -1,0 +1,53 @@
+
+<?php
+
+
+
+?>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Le pouvoir de Kenar</title>
+
+
+<link rel="stylesheet" type="text/css" href="../../css/mysite.css">
+
+
+</head>
+
+<body>
+
+<div id="panel">
+
+	<button style="font-family: PressStart, 'Comic Sans MS', cursive;">Nouveau jeu</button>
+	<!--<button class = "stop" >stopMoving</button> -->
+	<p><b>Oiseaux ratés:</b> <span id="errors"></span></p>
+	<p><b>Oiseaux attrapés:</b> <span id="score"></span> </p>
+	<p><b>Le temps passait: </b>
+    <div class="top-block">
+        <div class="sw">heure:
+          <p class="hours">00</p>
+        </div>
+
+        <div class="sw">minutes:
+          <p class="mins">00</p>
+        </div>
+
+        <div class="sw">secondes:
+          <p class="secs">00</p>
+        </div>
+
+        <div class="sw">millisecondes:
+          <p class="milis">00</p>
+        </div>
+
+
+    </div>
+</div>
+
+<canvas id='myCanvas' width='600' height='800'></canvas>
+
+<script src="cs.js"></script>
+<a href = "index.php"><div class = "button"><b>Au menu principal</b></div></a>
+</body>
+</html>

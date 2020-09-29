@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>stopwatch</title>
+  <meta charset="utf-8">
+
+</head>
+<body>
+    
+    <div class="top-block">
+        <div class="sw">
+          <p class="hours">00</p>
+        </div>
+
+        <div class="sw">
+          <p class="mins">00</p>
+        </div>
+
+        <div class="sw">
+          <p class="secs">00</p>
+        </div>
+
+        <div class="sw">
+          <p class="milis">00</p>
+        </div>
+
+        <div class="buttons-block">
+            <a href="#" class="button start">START</a>
+            <a href="#" class="button stop">STOP</a>
+            <a href="#" class="button lap">LAP</a>
+            <a href="#" class="button reset">RESET</a>
+        </div>
+    </div>
+    <div class="lapContainer">
+        
+    </div>
+
+  <script>
+var body = document.body;
+
+var start = document.querySelector('.start');
+var stop = document.querySelector('.stop');
+var reset = document.querySelector('.reset');
+var lap = document.querySelector('.lap');
+
+var lapContainer = document.querySelector('.lapContainer');
+
+var mil = document.querySelector('.milis');
+var sec = document.querySelector('.secs');
+var min = document.querySelector('.mins');
+var hours = document.querySelector('.hours');
+var flag = false;
+
+
+// Create blocks for time markers
+function createTimeSection(timeType) { // timeType = min/sec/ms/ :
+  var lapTime = document.createElement('div');
+  lapTime.classList.add('lapSection');
+  lapBlock.appendChild(lapTime);
+  lapTime.innerHTML = (timeType);
+}
+
+function createTimeBlock(type) {
+  lapBlock = document.createElement('div');
+  lapBlock.classList.add('lapBlock');
+  lapContainer.appendChild(lapBlock);
+  var lapText = document.createElement('div');
+
+  lapText.classList.add('lapText');
+  lapBlock.appendChild(lapText);
+  lapText.innerHTML = (type);
+
+  createTimeSection(hours);
+  createTimeSection(':');
+  createTimeSection(minutes);
+  createTimeSection(':');
+  createTimeSection(seconds);
+  createTimeSection(':');
+  createTimeSection(milliseconds);
+}
+
+// hide/display START/STOP buttons
+function displayStopButton() {
+  start.style.display = 'none';
+  stop.style.display = 'block';
+}
+
+function displayStartButton() {
+  start.style.display = 'block';
+  stop.style.display = 'none';
+}
+
+
+// Get Date start point
+function startStopwatch() {
+  flag = true;
+  initialDate = new Date;
+}
+
+
+// calculate timer
+function getTime() {
+
+  var currentDate = new Date;
+  timer = new Date (currentDate - initialDate);
+  
+  milliseconds = timer.getMilliseconds();
+  seconds = timer.getSeconds();
+  minutes = timer.getMinutes();
+  hours = timer.getUTCHours();
+
+  if(milliseconds < 100){
+    milliseconds = '0' + milliseconds;
+  }
+  if(seconds < 10){
+    seconds = '0' + seconds;
+  }
+  if (minutes < 10){
+    minutes = '0' + minutes;
+  }
+  if (hours < 10){
+    hours = '0' + hours;
+  }
+}
+
+// display timer in document
+function counter() {
+  getTime();
+  mil.innerHTML = milliseconds;
+  sec.innerHTML = seconds;
+  min.innerHTML = minutes;
+  hours.innerHTML = hours;
+}
+
+// interval for display
+function displayTimer() {
+  timerId = setInterval(counter, 10);
+}
+
+
+function stopTimer() {
+  clearInterval(timerId);
+  getTime();
+  createTimeBlock('STOP');
+  flag = false;
+}
+
+function newLap() {
+  if (flag == true){
+    getTime();
+    createTimeBlock('LAP');
+  } else {
+    lapBlock = document.createElement('div');
+    lapBlock.classList.add('lapBlock');
+    lapContainer.appendChild(lapBlock);
+    var lapText = document.createElement('div');
+
+    lapText.classList.add('lapText');
+    lapBlock.appendChild(lapText);
+    lapText.innerHTML = ('PRESS START FIRST');
+  }
+}
+
+
+function resetTimer() {
+  flag = false;
+  clearInterval(timerId);
+  start.style.display = 'block';
+  stop.style.display = 'none';
+  mil.innerHTML = '00';
+  min.innerHTML = '00';
+  sec.innerHTML = '00';
+  document.querySelector('.lapContainer').innerHTML = '';
+}
+
+start.addEventListener('click', startStopwatch);
+start.addEventListener('click', displayStopButton);
+start.addEventListener('click', displayTimer);
+
+lap.addEventListener('click', newLap)
+
+stop.addEventListener('click', stopTimer)
+stop.addEventListener('click', displayStartButton);
+
+reset.addEventListener('click', resetTimer);
+  </script>
+</body>
+</html>
